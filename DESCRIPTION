@@ -1,0 +1,13 @@
+Package: NBDiagnostics
+Type: Package
+Title: Diagnostic Plots for NB models for Falls prevention Trials
+Version: 0.1.0
+Author: Han Zheng
+Maintainer: Han Zheng <hz9g13@soton.ac.uk>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: false
+Imports: ggplot2, MASS, plotly, reshape2, plyr, pscl
+RoxygenNote: 6.1.0
