@@ -4,7 +4,7 @@
 \alias{nbdiagnostics}
 \title{NB Model with Diagnostic Functionality}
 \usage{
-nbdiagnostics(formula, data, ..., id_varname, followup_varname,
+nbdiagnostics(formula, data, ..., id_varname, outcome_varname,
   baseline_varname, group_varname, addition = 0.5)
 }
 \arguments{
@@ -28,7 +28,7 @@ dat <- data.frame(id=1:obs, y0=y0, y1=y1, group=x)
 ## the varaibles names for the plots
 mod_nb <- nbdiagnostics(
   y1 ~ group, data=dat, id_varname = "id",
-  followup_varname="y1", baseline_varname="y0",
+  outcome_varname="y1", baseline_varname="y0",
   group_varname = "group")
 
 ## produce the baseline/outcome event plots

@@ -24,7 +24,7 @@ dat <- data.frame(id=1:obs, y0=y0, y1=y1, group=x)
 ## the varaibles names for the plots
 mod_nb <- nbdiagnostics(
   y1 ~ group, data=dat, id_varname = "id",
-  followup_varname="y1", baseline_varname="y0",
+  outcome_varname="y1", baseline_varname="y0",
   group_varname = "group")
 
 ## covariate adjusted probability plot:
