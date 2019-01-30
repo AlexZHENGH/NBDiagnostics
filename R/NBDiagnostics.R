@@ -9,7 +9,7 @@
 #' @param data
 #' @param ...
 #' @param id_varname
-#' @param followup_varname
+#' @param outcome_varname
 #' @param baseline_varname
 #' @param group_varname
 #' @param addition
@@ -33,7 +33,7 @@
 #' ## the varaibles names for the plots
 #' mod_nb <- nbdiagnostics(
 #'   y1 ~ group, data=dat, id_varname = "id",
-#'   followup_varname="y1", baseline_varname="y0",
+#'   outcome_varname="y1", baseline_varname="y0",
 #'   group_varname = "group")
 #'
 #' ## produce the baseline/outcome event plots
@@ -50,13 +50,13 @@ nbdiagnostics <- function(
   formula,
   data, ...,
   id_varname,
-  followup_varname,
+  outcome_varname,
   baseline_varname,
   group_varname,
   addition=0.5
 ) {
   col_vars = unique(
-    c(id_varname, baseline_varname, followup_varname, group_varname,
+    c(id_varname, baseline_varname, outcome_varname, group_varname,
       all.vars(formula))
     )
   data <- na.omit(data[col_vars])
@@ -64,7 +64,7 @@ nbdiagnostics <- function(
 
   class(nb_model) <- c("NBDiagnostics", class(nb_model))
   nb_model$id_varname <- id_varname
-  nb_model$followup_varname <- followup_varname
+  nb_model$outcome_varname <- outcome_varname
   nb_model$baseline_varname <- baseline_varname
   nb_model$group_varname <- group_varname
   nb_model$addition <- addition

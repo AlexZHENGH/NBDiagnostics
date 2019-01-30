@@ -65,7 +65,7 @@ anscombe.residuals <- function(model) {
 #' ## the varaibles names for the plots
 #' mod_nb <- nbdiagnostics(
 #'   y1 ~ group, data=dat, id_varname = "id",
-#'   followup_varname="y1", baseline_varname="y0",
+#'   outcome_varname="y1", baseline_varname="y0",
 #'   group_varname = "group")
 #'
 #' ## produce the baseline/outcome event plots
@@ -86,18 +86,18 @@ boeplot <- function(
   if (is(model, "NBDiagnostics")) {
 
     x_aes <- paste0("log(", model$baseline_varname)
-    y_aes <- paste0("log(", model$followup_varname)
+    y_aes <- paste0("log(", model$outcome_varname)
 
     x_lowlim <- y_lowlim <- -1
     if (is.null(breaks)) {
       uplim <- ceiling(log(
         max(model$data[[model$baseline_varname]],
-            model$data[[model$followup_varname]])
+            model$data[[model$outcome_varname]])
       ))
     } else {
       uplim <- ceiling(log(
         max(model$data[[model$baseline_varname]],
-            model$data[[model$followup_varname]],
+            model$data[[model$outcome_varname]],
             breaks)
       ))
     }
@@ -112,7 +112,7 @@ boeplot <- function(
       breaks <- c(0, 2, 5, 15, 50, 200, 500)
       max_count <- max(
         model$data[[model$baseline_varname]],
-        model$data[[model$followup_varname]]
+        model$data[[model$outcome_varname]]
         )
       if (max_count < 600) {
         upper_index <- length(breaks)
@@ -371,7 +371,7 @@ nb.obs.pred <- function (len, model) {
 #' ## the varaibles names for the plots
 #' mod_nb <- nbdiagnostics(
 #'   y1 ~ group, data=dat, id_varname = "id",
-#'   followup_varname="y1", baseline_varname="y0",
+#'   outcome_varname="y1", baseline_varname="y0",
 #'   group_varname = "group")
 #'
 #' ## covariate adjusted probability plot: NB (Holling et al, 2016)
@@ -411,7 +411,7 @@ caprob_nb <- function(len, model) {
 #' ## the varaibles names for the plots
 #' mod_nb <- nbdiagnostics(
 #'   y1 ~ group, data=dat, id_varname = "id",
-#'   followup_varname="y1", baseline_varname="y0",
+#'   outcome_varname="y1", baseline_varname="y0",
 #'   group_varname = "group")
 #'
 #' ## covariate adjusted probability plot:
