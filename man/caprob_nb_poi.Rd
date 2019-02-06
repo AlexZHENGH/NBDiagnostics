@@ -2,12 +2,17 @@
 % Please edit documentation in R/ggplot.NBDiagnostics.R
 \name{caprob_nb_poi}
 \alias{caprob_nb_poi}
-\title{Covariate adjusted probability plot: NB versus Poisson}
+\title{Covariate adjusted probability plot: NB vs Poisson}
 \usage{
 caprob_nb_poi(len, nb_model, data)
 }
+\arguments{
+\item{len}{the covariate adjusted probabilities within 0 to \code{len}}
+
+\item{nb_model}{an object of class \code{NBDiagnostics}}
+}
 \description{
-\code{covplot_nb_poi} is used to produce the covariate adjusted probability plot (Holling et al, 2016) of NB versus Poisson.
+The covariate adjusted probability plot (Holling et al, 2016): NB versus Poisson.
 }
 \examples{
 ## simulate a dataset with outcome and baseline count

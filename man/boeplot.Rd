@@ -2,17 +2,25 @@
 % Please edit documentation in R/ggplot.NBDiagnostics.R
 \name{boeplot}
 \alias{boeplot}
-\title{Baseline/Outcome Event (BOE) Plot for NB Models}
+\title{Baseline/Outcome Event (BOE) plot for NB Models}
 \usage{
 boeplot(model, diagnostic_stat = c("cookd", "leverage", "anscombe_resid",
   "dfbeta"), breaks = NULL, n.label = 3, id_lable_size = 5,
   show_labels_id = NULL)
 }
 \arguments{
-\item{show_labels_id}{}
+\item{model}{an object of class \code{NBDiagnostics}}
+
+\item{diagnostic_stat}{the diagnostic statistic that should be presented in the BOE plot}
+
+\item{n.label}{the number of ID labels shown in the plot}
+
+\item{id_lable_size}{the size of the ID labels}
+
+\item{show_labels_id}{the specified IDs to show in the labels}
 }
 \description{
-\code{boeplot} produces the Baseline/Outcome Event (BOE) plot for an NB model (an \code{NBDiagnostics} object)
+The Baseline/Outcome Event (BOE) plot for a fitted NB model
 }
 \examples{
 ## simulate a dataset with outcome and baseline count

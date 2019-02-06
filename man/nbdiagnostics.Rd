@@ -2,16 +2,30 @@
 % Please edit documentation in R/NBDiagnostics.R
 \name{nbdiagnostics}
 \alias{nbdiagnostics}
-\title{NB Model with Diagnostic Functionality}
+\title{Diagnostic functionality for NB models}
 \usage{
 nbdiagnostics(formula, data, ..., id_varname, outcome_varname,
   baseline_varname, group_varname, addition = 0.5)
 }
 \arguments{
-\item{addition}{}
+\item{formula, data, ...}{arguments for the \code{glm.nb()} function}
+
+\item{id_varname}{variable name for subject ID}
+
+\item{outcome_varname}{variable name for the outcome count/rate}
+
+\item{baseline_varname}{variable name for the baseline count/rate}
+
+\item{group_varname}{variable name for group}
+
+\item{addition}{addition for log-transformation}
+}
+\value{
+\code{nbdiagnostics()} returns an object of class \code{NBDiagnostics}
+inheriting from \code{negbin}, \code{glm}, and \code{lm}.
 }
 \description{
-NB Model with Diagnostic Functionality
+Diagnostic functionality for NB models
 }
 \examples{
 ## simulate a dataset with outcome and baseline count

@@ -7,10 +7,12 @@
 caprob_nb(len, model)
 }
 \arguments{
-\item{model}{}
+\item{len}{the covariate adjusted probabilities within 0 to \code{len}}
+
+\item{model}{an object of class \code{NBDiagnostics}}
 }
 \description{
-\code{covplot_nb_poi} is used to produce the covariate adjusted probability plot (Holling et al, 2016) of the NB model.
+The covariate adjusted probability plot (Holling et al, 2016) of the NB model.
 }
 \examples{
 ## simulate a dataset with outcome and baseline count

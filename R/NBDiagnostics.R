@@ -3,18 +3,18 @@
 # Functions for fitting an NB model
 
 
-#' NB Model with Diagnostic Functionality
+#' Diagnostic functionality for NB models
 #'
-#' @param formula
-#' @param data
-#' @param ...
-#' @param id_varname
-#' @param outcome_varname
-#' @param baseline_varname
-#' @param group_varname
-#' @param addition
+#' @param formula,data,...  arguments for the \code{glm.nb()} function
+#' @param id_varname  variable name for subject ID
+#' @param outcome_varname  variable name for the outcome count/rate
+#' @param baseline_varname  variable name for the baseline count/rate
+#' @param group_varname  variable name for group
+#' @param addition  addition for log-transformation
+#' @description Diagnostic functionality for NB models
 #'
-#' @return
+#' @return \code{nbdiagnostics()} returns an object of class \code{NBDiagnostics}
+#' inheriting from \code{negbin}, \code{glm}, and \code{lm}.
 #' @export
 #' @import MASS
 #'

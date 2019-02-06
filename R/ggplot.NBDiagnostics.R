@@ -38,18 +38,17 @@ anscombe.residuals <- function(model) {
 }
 
 
-#' Baseline/Outcome Event (BOE) Plot for NB Models
+#' Baseline/Outcome Event (BOE) plot for NB Models
 #'
-#' @param model
-#' @param diagnostic_stat
-#' @param n.label
-#' @param id_lable_size
-#' @param show_labels_id
+#' @param model  an object of class \code{NBDiagnostics}
+#' @param diagnostic_stat  the diagnostic statistic that should be presented in the BOE plot
+#' @param n.label  the number of ID labels shown in the plot
+#' @param id_lable_size  the size of the ID labels
+#' @param show_labels_id  the specified IDs to show in the labels
 #'
-#' @return
 #' @export
 #' @import ggplot2 ggrepel
-#' @description \code{boeplot} produces the Baseline/Outcome Event (BOE) plot for an NB model (an \code{NBDiagnostics} object)
+#' @description The Baseline/Outcome Event (BOE) plot for a fitted NB model
 #' @examples
 #' ## simulate a dataset with outcome and baseline count
 #' obs <- 200
@@ -348,13 +347,13 @@ nb.obs.pred <- function (len, model) {
 
 #' Covariate adjusted probability plot for NB models
 #'
-#' @param len
-#' @param model
+#' @param len  the covariate adjusted probabilities within 0 to \code{len}
+#' @param model  an object of class \code{NBDiagnostics}
 #'
 #' @return
 #' @import data.table
 #' @export
-#' @description \code{covplot_nb_poi} is used to produce the covariate adjusted probability plot (Holling et al, 2016) of the NB model.
+#' @description The covariate adjusted probability plot (Holling et al, 2016) of the NB model.
 #' @references Holling, H., Böhning, W., Böhning, D., Formann, A.K., 2016. The covariate-adjusted frequency plot. Stat. Methods Med. Res. 25, 902–916.
 #' @examples
 #' ## simulate a dataset with outcome and baseline count
@@ -387,14 +386,14 @@ caprob_nb <- function(len, model) {
             c("Observed", "NB"))
 }
 
-#' Covariate adjusted probability plot: NB versus Poisson
+#' Covariate adjusted probability plot: NB vs Poisson
 #'
-#' @param len
-#' @param nb_model
+#' @param len  the covariate adjusted probabilities within 0 to \code{len}
+#' @param nb_model  an object of class \code{NBDiagnostics}
 #' @return
 #' @import COUNT
 #' @export
-#' @description \code{covplot_nb_poi} is used to produce the covariate adjusted probability plot (Holling et al, 2016) of NB versus Poisson.
+#' @description The covariate adjusted probability plot (Holling et al, 2016): NB versus Poisson.
 #' @references Holling, H., Böhning, W., Böhning, D., Formann, A.K., 2016. The covariate-adjusted frequency plot. Stat. Methods Med. Res. 25, 902–916.
 #' @examples
 #' ## simulate a dataset with outcome and baseline count
